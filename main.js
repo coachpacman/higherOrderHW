@@ -25,12 +25,16 @@ document.getElementById('answer2').innerHTML = filterItems
 
 
 //3 Which item has a "GBP" currency code? Display it's name and price.
-
-var gbpItems = items.filter(function(d) {
-	return d.currency_code === "GBP"
+var gbpItem = "" 
+items.filter(function(d) {
+	if (d.currency_code === "GBP") {
+		gbpItem += "Item: " + d.title + "Price: $" + d.price
+	}
 })
 
-document.getElementById('answer3').innerHTML = gbpItems
+console.log(gbpItem)
+
+document.getElementById('answer3').innerHTML = gbpItem
 
 
 //4 Display a list of all items who are made of wood.
